@@ -20,3 +20,25 @@ for t in lista_tuplas:
         lista_final.append(t)
 
 print(lista_final)
+
+#CORRECCIOON:
+#El problema radica en que estás comparando el precio (t[1])
+# en lugar de la marca (t[3]) dentro del bucle for en la condición del if.
+
+marca_especifica = input("Ingrese marca específica: ").lower()
+precio_maximo = int(input("Ingrese precio máximo: "))
+
+lista_tuplas = [
+    ("Microondas", 30000, 8, "Samsung"),
+    ("TV", 90000, 15, "Sony"),
+    ("Heladera", 75000, 12, "Drean"),
+    ("Celular", 56000, 23, "Xiaomi")
+]
+
+lista_final = []
+
+for t in lista_tuplas:
+    if t[2] <= precio_maximo and t[3].lower() == marca_especifica:
+        lista_final.append(t)
+
+print(lista_final)
